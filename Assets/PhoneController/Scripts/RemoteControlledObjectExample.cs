@@ -7,13 +7,13 @@ public class RemoteControlledObjectExample : MonoBehaviour {
 	void Update () {
 	    if (AGRemoteController.RemoteControllerReceiver.Instance.GetKeyDown('R'))
         {
-			offset = AGRemoteController.RemoteControllerReceiver.Instance.Orientation * Quaternion.Euler(-90,0,0);
+			offset = Quaternion.Inverse (AGRemoteController.RemoteControllerReceiver.Instance.Orientation);// * Quaternion.Euler(90,0,0);
         }		
 		else if (AGRemoteController.RemoteControllerReceiver.Instance.GetKeyDown('A')) {
 			this.transform.localScale *= 1.1f;
 		} else if (AGRemoteController.RemoteControllerReceiver.Instance.GetKeyDown('B')) {
 			this.transform.localScale *= 0.9f;
 		}
-		transform.localRotation = AGRemoteController.RemoteControllerReceiver.Instance.Orientation * Quaternion.Inverse(offset);
+		transform.localRotation = AGRemoteController.RemoteControllerReceiver.Instance.Orientation * offset;
 	}
 }
