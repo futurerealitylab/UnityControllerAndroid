@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/PhoneController/Scenes/ReceiverSceneExample.unity
+- path: Assets/NewPhoneController/Scenes/PhoneWithSelection.unity
   isLoaded: 1
   isActive: 1

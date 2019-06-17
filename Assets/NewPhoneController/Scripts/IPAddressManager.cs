@@ -7,7 +7,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 
-public class IPAddressManager : MonoBehaviour
+public class IPAddressManager : Singleton<IPAddressManager>
 {
     /// <summary>
     /// This scripts doing the following:
