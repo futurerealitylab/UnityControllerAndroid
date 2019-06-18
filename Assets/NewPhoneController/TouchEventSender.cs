@@ -22,6 +22,8 @@ public class TouchEventSender : MonoBehaviour
                 newTouch.phase = Input.GetTouch(i).phase;
                 newTouch.radius = Input.GetTouch(i).radius;
                 newTouch.radiusVarience = Input.GetTouch(i).radiusVariance;
+                newTouch.fingerID = Input.GetTouch(i).fingerId;
+                newTouch.sendFrame = Time.frameCount;
                 touches.Add(newTouch);
             }
             string touchString = JsonConvert.SerializeObject(touches);
@@ -36,6 +38,8 @@ public class SimpleTouch
     public TouchPhase phase { get; set; }
     public float radius { get; set; }
     public float radiusVarience { get; set; }
+    public int fingerID { get; set; }
+    public int sendFrame { get; set; }
 }
 
 

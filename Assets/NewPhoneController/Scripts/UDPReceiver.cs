@@ -41,7 +41,7 @@ public class UDPReceiver : Singleton<UDPReceiver>
 
         string str = Encoding.ASCII.GetString(received);
 
-        Debug.Log("Received: " + str);
+        //Debug.Log("Received: " + str);
 
         if (OnReceivedMessage != null)
         {
