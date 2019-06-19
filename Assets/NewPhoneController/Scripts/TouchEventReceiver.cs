@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 
-public class TouchEventReceiver : MonoBehaviour
+public class TouchEventReceiver : Singleton<TouchEventReceiver>
 {
     private int frameCount = 0;
 
