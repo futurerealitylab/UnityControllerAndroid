@@ -45,7 +45,7 @@ public class TouchEventReceiver : Singleton<TouchEventReceiver>
             Debug.Log("Finger Nums: " + frameTouches.Count);
             foreach(SimpleTouch touch in frameTouches)
             {
-                Debug.Log(string.Format("pos: {0} , phase: {1}, id: {2}, SendFrame: {3}", touch.position, touch.phase, touch.fingerID, touch.sendFrame));
+                Debug.Log(string.Format("pos: {0} , phase: {1}, id: {2}, pressure ：{3}，radius : {4}, SendFrame: {5}", touch.position, touch.phase, touch.fingerID, touch.pressure, touch.radius, touch.sendFrame));
             }
         }
         

@@ -62,7 +62,7 @@ public class MyInputSource : InputSource
         base.OnEnable();
 
         // Subscribe to DeviceProxy events
-        var device = UDPTouchProxy.Instance;
+        var device = RefinedTouchProxy.Instance;
         if (device != null)
         {
             device.PointerPressed += pointerPressedHandler;
@@ -74,7 +74,7 @@ public class MyInputSource : InputSource
     protected override void OnDisable()
     {
         // Unsubscribe from DeviceProxy events
-        var device = UDPTouchProxy.Instance;
+        var device = RefinedTouchProxy.Instance;
         if (device != null)
         {
             device.PointerPressed -= pointerPressedHandler;
