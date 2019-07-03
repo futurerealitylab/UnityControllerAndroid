@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using TMPro;
+using UnityEngine.UI;
 
 public class TouchEventSender : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class TouchEventSender : MonoBehaviour
     /// Here we first read the input from every frame, and then send the informations back from 
     /// </summary>
     /// 
+
+    public Text TextInfo;
     private void Update()
     {
         if (Input.touchCount > 0)
@@ -30,7 +34,13 @@ public class TouchEventSender : MonoBehaviour
             }
             string touchString = JsonConvert.SerializeObject(touches);
             UDPSender.Instance.SendUDPMessage(touchString);
+            string lastTouchInfo = string.Format("pressure: {0}, float test {1}", Input.GetTouch(Input.touchCount - 1).pressure, 0.01f);
+            if (TextInfo != null)
+            {
+                TextInfo.text = lastTouchInfo;
+            }
         }
+        
     }
 }
 
